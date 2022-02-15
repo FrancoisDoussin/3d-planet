@@ -1,36 +1,10 @@
 import { useEffect, useRef } from 'react';
-import * as THREE from "three";
-import styled from 'styled-components';
+import * as THREE from 'three';
+import { Container } from './style';
 
-import moon from '../assets/moon.jpeg';
+import moon from '../../assets/moon.jpeg';
 
-const Container = styled.div`
-  height: 100vh;
-  width: 100vw;
-  background-color: black;
-`;
-
-const Header = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Title = styled.h1`
-  margin: 0;
-  color: rgb(184, 184, 184);
-  font-size: 3em;
-`;
-
-const Subtitle = styled.h2`
-  color: rgb(223, 204, 146);
-`;
-
-const Planet = () => {
+const Planet = ({ children }) => {
   const planetContainer = useRef(null);
 
   const Scene = () => new THREE.Scene();
@@ -89,10 +63,7 @@ const Planet = () => {
 
   return (
     <Container id="planet" ref={planetContainer}>
-      <Header>
-        <Title>François Doussin</Title>
-        <Subtitle>Développer - Photographer</Subtitle>
-      </Header>
+      {children}
     </Container>
   );
 }

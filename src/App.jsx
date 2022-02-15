@@ -1,10 +1,11 @@
-import Header from './components/Header/Header';
 import Planet from './components/Planet/Planet';
+import Presentation from './components/Presentation/Presentation';
 
 const App = () => (
-  <Planet>
-    <Header />
-  </Planet>
+  <>
+    <Planet />
+    <Presentation />
+  </>
 );
 
 export default App;

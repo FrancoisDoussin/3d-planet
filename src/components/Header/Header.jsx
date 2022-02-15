@@ -1,13 +1,13 @@
 import { TitleContainer, Title, Subtitle, ArrowDown } from './style';
 import { FaArrowAltCircleDown } from 'react-icons/fa';
 
-const Header = () => (
+const Header = ({ scrollDown }) => (
   <>
     <TitleContainer>
       <Title>François Doussin</Title>
       <Subtitle>Développer - Photographer</Subtitle>
     </TitleContainer>
-    <ArrowDown>
+    <ArrowDown onClick={scrollDown}>
       <FaArrowAltCircleDown />
     </ArrowDown>
   </>

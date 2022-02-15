@@ -1,10 +1,11 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { Container } from './style';
+import Header from '../Header/Header';
 
 import planetTexture from '../../assets/moon.jpeg';
 
-const Planet = ({ children }) => {
+const Planet = () => {
   const planetContainer = useRef(null);
 
   const Scene = () => new THREE.Scene();
@@ -60,9 +61,16 @@ const Planet = ({ children }) => {
     animate();
   }, []);
 
+  const scrollDown = () => {
+    window.scroll({
+      top: planetContainer.current.offsetHeight,
+      behavior: 'smooth' 
+    });
+  }
+
   return (
     <Container id="planet" ref={planetContainer}>
-      {children}
+      <Header scrollDown={scrollDown} />
     </Container>
   );
 }

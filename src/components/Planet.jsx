@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from "three";
-import moon from './assets/moon.jpeg';
-import './App.css';
+import moon from '../assets/moon.jpeg';
 
-function App() {
+import './Planet.css';
+
+const Planet = () => {
   const planetContainer = useRef(null);
 
   const Scene = () => new THREE.Scene();
@@ -70,4 +71,4 @@ function App() {
   );
 }
 
-export default App;
+export default Planet;

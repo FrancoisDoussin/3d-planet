@@ -1,8 +1,34 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from "three";
+import styled from 'styled-components';
+
 import moon from '../assets/moon.jpeg';
 
-import './Planet.css';
+const Container = styled.div`
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+`;
+
+const Header = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Title = styled.h1`
+  margin: 0;
+  color: rgb(184, 184, 184);
+  font-size: 3em;
+`;
+
+const Subtitle = styled.h2`
+  color: rgb(223, 204, 146);
+`;
 
 const Planet = () => {
   const planetContainer = useRef(null);
@@ -62,12 +88,12 @@ const Planet = () => {
   }, []);
 
   return (
-    <div id="planet" ref={planetContainer}>
-      <div id="title">
-        <h1>François Doussin</h1>
-        <h2>Développer - Photographer</h2>
-      </div>
-    </div>
+    <Container id="planet" ref={planetContainer}>
+      <Header>
+        <Title>François Doussin</Title>
+        <Subtitle>Développer - Photographer</Subtitle>
+      </Header>
+    </Container>
   );
 }
 

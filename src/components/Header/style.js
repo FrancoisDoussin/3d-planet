@@ -12,12 +12,12 @@ export const TitleContainer = styled.div`
 
 export const Title = styled.h1`
   margin: 0;
-  color: rgb(184, 184, 184);
+  color: ${props => props.theme.colors.primary};
   font-size: 3em;
 `;
 
 export const Subtitle = styled.h2`
-  color: rgb(223, 204, 146);
+  color: ${props => props.theme.colors.secondary};
 `;
 
 const upAndDown = keyframes`
@@ -35,7 +35,7 @@ const upAndDown = keyframes`
 `;
 
 export const ArrowDown = styled.h2`
-  color: rgb(184, 184, 184);
+  color: ${props => props.theme.colors.primary};
   position: absolute;
   bottom: 10px;
   left: 50%;

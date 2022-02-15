@@ -5,15 +5,17 @@ export const TitleContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 `;
 
 export const Title = styled.h1`
   margin: 0;
   color: ${props => props.theme.colors.primary};
-  font-size: 3em;
+  font-size: 2.5em;
 `;
 
 export const Subtitle = styled.h2`

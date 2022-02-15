@@ -29,7 +29,7 @@ function App() {
   };
 
   const Planet = () => {
-    const geometry = new THREE.SphereGeometry( 3, 64, 32 );
+    const geometry = new THREE.SphereGeometry( 3.5, 64, 32 );
     const texture = new THREE.TextureLoader().load( moon );
     const material = new THREE.MeshStandardMaterial( { map: texture } );
     return new THREE.Mesh( geometry, material );
@@ -60,7 +60,14 @@ function App() {
     animate();
   }, []);
 
-  return <div id="planet" ref={planetContainer} />;
+  return (
+    <div id="planet" ref={planetContainer}>
+      <div id="title">
+        <h1>François Doussin</h1>
+        <h2>Développer - Photographer</h2>
+      </div>
+    </div>
+  );
 }
 
 export default App;

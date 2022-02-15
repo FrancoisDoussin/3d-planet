@@ -1,10 +1,16 @@
-import { Container, Title, Subtitle } from './style';
+import { TitleContainer, Title, Subtitle, ArrowDown } from './style';
+import { FaArrowAltCircleDown } from 'react-icons/fa';
 
 const Header = () => (
-  <Container>
-    <Title>François Doussin</Title>
-    <Subtitle>Développer - Photographer</Subtitle>
-  </Container>
+  <>
+    <TitleContainer>
+      <Title>François Doussin</Title>
+      <Subtitle>Développer - Photographer</Subtitle>
+    </TitleContainer>
+    <ArrowDown>
+      <FaArrowAltCircleDown />
+    </ArrowDown>
+  </>
 );
 
 export default Header;

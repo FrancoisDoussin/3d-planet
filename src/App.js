@@ -1,22 +1,27 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import * as THREE from "three";
 import moon from './assets/moon.jpeg';
 import './App.css';
 
 function App() {
+  const planetContainer = useRef(null);
+
   useEffect(() => {
-    var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera( 50, window.innerWidth/window.innerHeight, 0.1, 1000 );
-    var renderer = new THREE.WebGLRenderer();
-    
-    renderer.setSize( window.innerWidth, window.innerHeight );
-    
-    document.body.appendChild( renderer.domElement );
-    
-    var geometry = new THREE.SphereGeometry( 3, 64, 32 );
+    const innerWidth = planetContainer.current.offsetWidth;
+    const innerHeight = planetContainer.current.offsetHeight;
+
+    let scene = new THREE.Scene();
+    let camera = new THREE.PerspectiveCamera( 50, innerWidth/innerHeight, 0.1, 1000 );
+    let renderer = new THREE.WebGLRenderer();
+
+    renderer.setSize( innerWidth, innerHeight );
+
+    planetContainer.current.appendChild( renderer.domElement );
+
+    let geometry = new THREE.SphereGeometry( 3, 64, 32 );
     const texture = new THREE.TextureLoader().load( moon );
     let material = new THREE.MeshStandardMaterial( { map: texture } );
-    var cube = new THREE.Mesh( geometry, material );
+    let cube = new THREE.Mesh( geometry, material );
 
     const spotLight = new THREE.SpotLight( 0xffffff );
     spotLight.position.set( 100, 100, -10 );
@@ -35,7 +40,7 @@ function App() {
   }, []);
 
   return (
-    <div />
+    <div id="planet" ref={planetContainer} />
   );
 }
 

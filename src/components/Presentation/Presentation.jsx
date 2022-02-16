@@ -1,6 +1,13 @@
-import { FaLinkedin, FaGithub, FaTwitter, FaInstagram, FaMailBulk } from "react-icons/fa";
-
-import { Container, Icons, Image } from './style';
+import {
+  Container,
+  Icons,
+  Image,
+  Linkedin,
+  Github,
+  Twitter,
+  Instagram,
+  MailBulk
+} from './style';
 
 import picture from '../../assets/picture.jpeg';
 
@@ -9,19 +16,19 @@ const Presentation = () => (
     <Image src={picture} alt="François Doussin"/>
     <Icons>
       <a href="https://www.linkedin.com/in/francois-doussin">
-        <FaLinkedin />
+        <Linkedin/>
       </a>
       <a href="https://github.com/FrancoisDoussin">
-        <FaGithub />
+        <Github />
       </a>
       <a href="https://twitter.com/FrancoisDoussin">
-        <FaTwitter />
+        <Twitter />
       </a>
       <a href="https://www.instagram.com/francoisdoussin/">
-        <FaInstagram />
+        <Instagram />
       </a>
       <a href="mailto:contact@francoisdoussin.com">
-        <FaMailBulk />
+        <MailBulk />
       </a>
     </Icons>
   </Container>
